@@ -19,6 +19,9 @@ body{
     /*height: 100vh; /*altura da tag body na tela(100%)*/
     box-sizing: border-box; /*tag de borda(mantem as "caixas" dentro do coiteiner body)*/
     color: var(--cor-secundaria); /*cor da fonte*/
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }/*todo conteudo visual da pagina*/
 
 .cabecalho{
@@ -39,7 +42,7 @@ body{
 }/*navegação links*/
 
 .cabecalho_menu_navegacao_link:hover{
-    color:var(--cor-secundaria) /*colore o texto ao pasaro mouse*/
+    color:var(--cor-terciaria) /*colore o texto ao pasaro mouse*/
 }/*definição especial do elemento ao passar o mouse*/
 
 
@@ -61,7 +64,7 @@ body{
 
 .conteiner_conteudo_titulo{
     font-size: 2.25rem;/*tamanho da fonte*/
-    font-family: var(--fonte-secundaria) /*estilo da fonte do texto*/
+    font-family: var(--fonte-primaria) /*estilo da fonte do texto*/
 }/*h1 - coluna a esquerda*/
 
 .conteiner_conteudo_texto{
@@ -107,7 +110,7 @@ body{
 
 
 .conteiner_conteudo_links_subtitulo{
-    font-family: var(--cor-primaria); /*estilo da fonte*/
+    font-family: var(--fonte-secundaria); /*estilo da fonte*/
     font-weight: bold; /*intensidade da cor da fonte*/
     font-size: 1.5rem; /*tamanho da fonte*/
     font-weight: 400;
@@ -138,17 +141,12 @@ p{
     color:var(--cor-secundaria);/*cor da fonte*/
     text-align: center;/*alinhamento do texto no centro*/
     font-family: var(--fonte-secundaria);/*estilo da fonte*/
-    font-size: 1.5rem; /*tamanho da fonte*/
+    font-size: 0.8rem; /*tamanho da fonte*/
     font-weight: 400; /*peso da fonte*/
     padding: 24px; /*espaço entre texto e o rodape*/
 }/*rodape da pagina*/
 
 /* curriculo */
-.body_curriculo {
-    display: flex;/*ajuste das caixas dentro do header*/
-    flex-direction: column; /*alinha as caixas em colunas*/
-}/* Configura o Body como um contêiner flexível vertical */
-
 .conteudo_curriculo {
     flex: 1;
     display: flex;/*ajuste das caixas dentro do header*/
@@ -160,25 +158,19 @@ p{
 
 .curriculo {
     display: flex;/*ajuste das caixas dentro do header*/
-    flex-direction: row; /*alinha as caixas em colunas*/
+    flex-direction: center; /*alinha as caixas em colunas*/
     align-items: center; /* Centraliza o texto verticalmente em relação à foto */
     gap: 20px; /* Espaçamento entre a foto e os dados */
 }/* Estiliza a seção do currículo */
 
-.curriculo_foto {
-    margin-right: 20px; /* Espaço entre a foto e os dados */
-}/* Estiliza a foto */
-
-.curriculo_foto img {
-    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+.curriculo_foto{
     height: auto; /* Mantém a proporção da imagem */
-    width: 200px; /* Define a largura desejada para a foto */
+    width: 50%; /* Define a largura desejada para a foto */
 }/*estilia a imagem*/
 
 .curriculo_dados {
     display: flex;/*ajuste das caixas dentro do header*/
-    flex-direction: column; /* Organiza os dados em coluna */
-    align-items: flex-start; /* Alinha os itens ao início do contêiner */
+    flex-direction: center; /* Organiza os dados em coluna */
     gap: 20px; /* Espaço entre as seções */
 }/* Estiliza os dados do currículo */
 
@@ -199,18 +191,20 @@ p{
 }/*estiliza o subtitulo*/
 
 .conteiner_curriculo_conteudo_texto {
-    font-size: 16px; /* Tamanho da fonte do texto */
+    font-size: 1rem; /* Tamanho da fonte do texto */
     line-height: 1.4; /* Altura da linha */
     margin-bottom: 10px; /* Espaçamento inferior */
 }/*estiliza o texto*/
 
+/*sobre mim*/
 .apresentacao {
     text-align: center; /*alinhamento do texto no centro*/
     padding: 5%; /*espaço entre o texto e a caixa de apresentação*/
 }/*div about*/
 
 .apresentacao__conteudo {
-    max-width: 600px; /*largura maxima*/
+    margin: auto; /*margem automatica*/
+    max-width: 600px; /*ajusta o tamanho maximo da imagem*/
     margin: 0 auto; /*margem automatica*/
 }/*conteudo da div*/
 
@@ -228,17 +222,25 @@ p{
 
 .apresentacao__conteudo__texto {
     font-size: 1.125rem; /*tamanho da fonte*/
-    margin-bottom: 20px; /* Espaçamento inferior entre os parágrafos */
-
 }/*conteudo da div - texto*/
 
 .apresentacao__conteudo img {
-    max-width: 100%; /* Garante que a imagem não ultrapasse a largura da seção */
     height: auto; /* Mantém a proporção da imagem */
-    display: block; /* Remove espaços extras ao redor da imagem */
+    display: flex; /* Remove espaços extras ao redor da imagem */
     margin: 20px auto; /* Centraliza a imagem e adiciona um espaçamento ao redor */
-    width: 300px; /* Largura desejada para a imagem */
+    width: 50%;
 }/*foto da div*/
+
+/* Estiliza as imagens com animação */
+.imagem_animada {
+    transition: transform 0.5s;
+}
+
+.imagem_animada:hover {
+    transform: scale(1.1); /* Aumenta o tamanho da imagem */
+    cursor: pointer; /* Muda o cursor para indicar que a imagem é interativa */
+}
+
 
 @media (max-width: 1200px) {
 
@@ -249,11 +251,18 @@ p{
         justify-content: center;
     }
     .conteiner{
-        flex-direction: column-reverse; /* alinha as caixas em linha*/
+        flex-direction: column-reverse; 
         padding: 5%;
     }/*main*/
     .conteiner_texto{
         width: auto;
+    } 
+    .curriculo{
+        flex-direction: column; /* alinha as caixas em linha*/
+        padding: 5%;
     }
-    
+    .curriculo_foto{
+        align-items: center;
+        padding: 5%;
+    }
 }
