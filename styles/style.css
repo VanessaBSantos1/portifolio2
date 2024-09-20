@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Krona+One&display=swap');
+
+:root{
+    --cor-primaria: #000000;
+    --cor-secundaria: #ffff;
+    --cor-terciaria: #22d4fd ;
+
+    --fonte-primaria: 'Montserrat', sans-serif;
+    --fonte-secundaria: 'Krona One', sans-serif;
+} /*paleta de cores*/
+
+*{
+    margin: 0;
+    padding: 0;
+}/* aplica para a pagina toda(reseta as configurações de margin e padding*/
+
+body{
+    background-color: var(--cor-primaria); /*cor do fundo da pagina*/
+    height: 100vh; /*altura da tag body na tela(100%)*/
+    box-sizing: border-box; /*tag de borda(mantem as "caixas" dentro do coiteiner body)*/
+    color: var(--cor-secundaria); /*cor da fonte*/
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}/*todo conteudo visual da pagina*/
+
+.cabecalho{
+    padding: 2% 0% 0% 15%; /*preenchimento do cabeçalho (espaço entre a pagina e o cabeçalho)*/
+} /*cabeçalho - header*/
+
+.cabecalho_menu_navegacao{
+    display: flex; /*ajuste das caixas dentro do header*/
+    gap: 80px; /*espaco entre os links do cabeçalho*/
+}/*navegação*/
+
+.cabecalho_menu_navegacao_link{
+    text-decoration: none; /*tira o sublinhado do link*/
+    color:var(--cor-secundaria); /*cor da fonte*/
+    font-size: 1.5rem; /*tamanho da fonte*/
+    font-weight: 600; /*peso da fonte*/
+    transition: color 0.3s ease; /*transição de cor ao passar o mouse pelo cabeçalho*/
+}/*navegação links*/
+
+.cabecalho_menu_navegacao_link:hover{
+    color:var(--cor-terciaria) /*colore o texto ao pasaro mouse*/
+}/*definição especial do elemento ao passar o mouse*/
+
+
+.conteiner{
+    display: flex; /*ajuste das caixas dentro do main*/
+    flex: 1;
+    flex-direction: row; /* alinha as caixas em linha*/
+    align-items: center; /*organiza no centro*/
+    justify-content: space-between; /*define um espaço entre caixas*/
+    padding: 5% 15%; /*margem do conteiner 5% - topo e fundo, 15% - direita e esquerda*/
+    gap: 80px; /*espaço entre as caixas*/
+}/*main*/
+
+
+.conteiner_texto{
+    display: flex; /*ajuste das caixas dentro do main - h1, p, div*/
+    flex-direction: column; /*alinha as caixas em coluna*/
+    gap: 40px;/*espaço entre caixas-colunas*/
+    width: 50%; /*largura - 50% do main*/
+}/*section - coluna a esquerda*/
+
+.conteiner_conteudo_titulo{
+    font-size: 2.25rem;/*tamanho da fonte*/
+    font-family: var(--fonte-primaria) /*estilo da fonte do texto*/
+}/*h1 - coluna a esquerda*/
+
+.conteiner_conteudo_texto{
+    font-size: 1rem; /*tamanho da fonte*/
+    line-height: 1.6; /*altura do texto*/
+    font-family: var(--fonte-secundaria); /*estilo da fonte do texto*/
+}/*p - coluna a esquerda*/
+
+.conteiner_conteudo_links{
+    display: flex; /*ajuste das caixas dentro da div*/
+    /*flex-direction: row; /* alinha as caixas em linha*/
+    justify-content: space-around; /*define um espaço entre caixas*/
+    flex-direction: column; /*alinha as caixas em colunas*/
+    align-items: center; /*alinha o conteudo no centro*/
+    gap: 32px;
+}/*div - coluna a esquerda*/
+
+.conteiner_conteudo_links_link{
+    background-color: var(--cor-primaria); /*cor de fundo*/
+    width: 50%; /*tamanho do botão*/
+    text-align: center;/*alinha o texto no centro*/
+    border-radius: 8px; /*arredonda as bordas*/
+    border: 2px solid var(--cor-terciaria); /*colore as bordas*/
+    font-size: 1.5rem; /*tamanho da fonte*/
+    font-weight: 600; /* peso da fonte*/
+    padding: 21.5px 0; /*preenchimento do botão (espaço entre o texto e borda do botão)*/
+    color:var(--cor-secundaria);/*cor da fonte*/
+    font-family: var(--fonte-primaria);/*estilo da fonte do texto*/
+    text-decoration: none; /*tira o subinhado do link*/
+    display: flex; /*ajuste dos botões dentro da div*/
+    justify-content: center; /*define um espaço entre botões*/
+    gap: 16px; /*espaço entre botões*/
+    cursor: pointer; /*altera o cursor quando clica no botão*/
+    transition: background-color 0.3s, color 0.3s; /*transição de cor ao passar o mouse pelo botão*/
+    transform: transform 0.5s; /*define o tempo de transição na cor do botão*/
+}/*a - botões da div*/
+
+.conteiner_conteudo_links_link:hover{
+    border-color: var(--cor-primaria); /*muda a cor da borda*/
+    color: #333; /*cor da fonte*/
+    transform: scale(1.3) ; /*da zoom no botão ao passar o mouse por ele*/
+}/*deixa os botões de link destacados ao passar o mouse*/
+
+.conteiner_conteudo_links_subtitulo{
+    font-family: var(--fonte-secundaria); /*estilo da fonte*/
+    font-weight: bold; /*intensidade da cor da fonte*/
+    font-size: 1.5rem; /*tamanho da fonte*/
+    font-weight: 400;
+}/*subtitulo da div*/
+
+.conteiner_conteudo_links_link img{
+    vertical-align: middle; /*alinhamento vertical ao meio*/
+}/*foto da section*/
+
+.conteiner_conteudo_imagem{
+    width: 50%;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: var(--cor-secundaria); /*cor da fonte do titulo*/
+} /*titulo*/
+
+p{
+    color:var(--cor-secundaria); /*cor da fonte do paragrafo*/
+} /*paragrafo*/
+
+.destaque_titulo{
+    color: var(--cor-terciaria); /*cor do destaque do titulo*/
+} /*tag strong(denota importancia)*/
+
+.rodape{
+    background-color: var(--cor-terciaria);/*cor de fundo*/
+    color:var(--cor-secundaria);/*cor da fonte*/
+    text-align: center;/*alinhamento do texto no centro*/
+    font-family: var(--fonte-secundaria);/*estilo da fonte*/
+    font-size: 0.8rem; /*tamanho da fonte*/
+    font-weight: 400; /*peso da fonte*/
+    padding: 24px; /*espaço entre texto e o rodape*/
+    align-content: flex-end;
+    width: 100%;
+}/*rodape da pagina*/
+
+/* curriculo */
+.conteudo_curriculo {
+    flex: 1;
+    display: flex;/*ajuste das caixas dentro do header*/
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    padding: 20px;/*espaço entre o conteudo e o body*/
+    flex-direction: column; /*alinha as caixas em colunas*/
+}/*main*/
+
+.curriculo {
+    display: flex;/*ajuste das caixas dentro do header*/
+    flex-direction: center; /*alinha as caixas em colunas*/
+    align-items: center; /* Centraliza o texto verticalmente em relação à foto */
+    gap: 20px; /* Espaçamento entre a foto e os dados */
+}/* Estiliza a seção do currículo */
+
+.curriculo_foto{
+    height: auto; /* Mantém a proporção da imagem */
+    width: 50%; /* Define a largura desejada para a foto */
+}/*estilia a imagem*/
+
+.curriculo_dados {
+    display: flex;/*ajuste das caixas dentro do header*/
+    flex-direction: center; /* Organiza os dados em coluna */
+    gap: 20px; /* Espaço entre as seções */
+}/* Estiliza os dados do currículo */
+
+.conteiner_conteudo_titulo {
+    font-size: 18px; /* Tamanho da fonte do título */
+} /*estiliza os titulos*/
+
+.conteiner_conteudo_titulo:hover{
+    border-color:var(--cor-primaria); /*muda a cor da borda*/
+    cursor: pointer; /*muda o cursor ao passar o mouse sobre os titulos*/
+    color: #333; /*cor da fonte*/
+    transform: scale(1.3) ; /*da zoom no botão ao passar o mouse por ele*/
+}/*deixa os titulos de link destacados ao passar o mouse*/
+
+.conteiner_curriculo_conteudo_subtitulo {
+    font-size: 18px; /* Tamanho da fonte do subtítulo */
+    margin-bottom: 10px; /* Espaçamento inferior */
+}/*estiliza o subtitulo*/
+
+.conteiner_curriculo_conteudo_texto {
+    font-size: 1rem; /* Tamanho da fonte do texto */
+    line-height: 1.4; /* Altura da linha */
+    margin-bottom: 10px; /* Espaçamento inferior */
+}/*estiliza o texto*/
+
+/*sobre mim*/
+.apresentacao {
+    text-align: center; /*alinhamento do texto no centro*/
+    padding: 5%; /*espaço entre o texto e a caixa de apresentação*/
+}/*div about*/
+
+.apresentacao__conteudo {
+    margin: auto; /*margem automatica*/
+    max-width: 600px; /*ajusta o tamanho maximo da imagem*/
+    margin: 0 auto; /*margem automatica*/
+}/*conteudo da div*/
+
+.apresentacao__conteudo__titulo {
+    font-size: 2.25rem; /*tamanho da fonte*/
+    margin-bottom: 20px; /*margem da parte inferior*/
+}/*titulo da div*/
+
+.apresentacao__conteudo__titulo:hover{
+    border-color: var(--cor-primaria); /*muda a cor da borda*/
+    cursor: pointer; /*muda o cursor ao passar o mouse sobre os titulos*/
+    color: #333; /*cor da fonte*/
+    transform: scale(1.3) ; /*da zoom no botão ao passar o mouse por ele*/
+}/*deixa os titulo de link destacados ao passar o mouse*/
+
+.apresentacao__conteudo__texto {
+    font-size: 1.125rem; /*tamanho da fonte*/
+}/*conteudo da div - texto*/
+
+.apresentacao__conteudo img {
+    height: auto; /* Mantém a proporção da imagem */
+    display: flex; /* Remove espaços extras ao redor da imagem */
+    margin: 20px auto; /* Centraliza a imagem e adiciona um espaçamento ao redor */
+    width: 50%;
+}/*foto da div*/
+
+/* Estiliza as imagens com animação */
+.imagem_animada {
+    transition: transform 0.5s;
+}
+
+.imagem_animada:hover {
+    transform: scale(1.1); /* Aumenta o tamanho da imagem */
+    cursor: pointer; /* Muda o cursor para indicar que a imagem é interativa */
+}
+
+/*projetos*/
+.projetos{
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+@media (max-width: 1200px) {
+
+    .cabecalho{
+        padding: 5%;
+    } 
+    .cabecalho_menu_navegacao{
+        justify-content: center;
+    }
+    .conteiner{
+        flex-direction: column-reverse; 
+        padding: 5%;
+    }/*main*/
+
+    .conteiner_texto{
+        width: auto;
+    } 
+    .curriculo{
+        flex-direction: column; /* alinha as caixas em linha*/
+        padding: 5%;
+    }
+    .curriculo_foto{
+        align-items: center;
+        padding: 5%;
+    }
+
+    body {
+        height: 100vh;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .cabecalho_menu_navegacao {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .conteiner_conteudo_links {
+        flex-direction: column;
+    }
+    body {
+        height: 100vh;
+        width: 100%;
+    }
+}
